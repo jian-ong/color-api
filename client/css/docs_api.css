@@ -37,12 +37,21 @@
     padding-bottom: 15px;
     font-size: 24px;
 }
-.docs-border {
+/* .docs-border {
     border: 3px solid #cccccc;
     border-radius: 5px;
     padding: 25px;
     background-color: #dddddd;
     font-size: 18px;
+} */
+.docs-border {
+    border: 0.5px solid #CCCCCC;
+    border-radius: 5px;
+    padding: 25px;
+    background-color: #F7F5F5;
+    font-size: 18px;
+    margin: 0 auto;
+    text-align: center;
 }
 .doc-api-body .semi-colon {
     color: burlywood;
