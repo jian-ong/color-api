@@ -14,12 +14,12 @@
     margin-left: 0.5em;
     opacity: 0.5;
 }
-.generate-btn {
+/* .generate-btn {
     position: relative;
     top: 4em;
     left: 2em;
     outline: rgb(122, 131, 150);
-}
+} */
 div {
     display: inline-block;
 }
@@ -64,8 +64,10 @@ div {
     top: -1.3em;
     left: -2em;
 }
+
+
 /* Login page */
-.login-page-title {
+/* .login-page-title {
     font-family: 'Nunito', sans-serif;
     font-size: 45px;
     color: #7b756df6;
@@ -99,7 +101,7 @@ div {
     height: 50em;
     width: 18em;
     padding: 40px;
-    background: rgb(245 229 229);
+    background-color: rgb(233, 233, 233);
     box-sizing: border-box;
 }
 .box h2, .box h3 {
@@ -135,7 +137,8 @@ div {
     pointer-events: none;
     transition: .5s;
     animation: LabelOnLoad 1s forwards 0s ease;
-} 
+}  */
+
 /* jian's code starts here */
 /* side bar */
 .side-bar {
