@@ -4,6 +4,7 @@ let signupName = document.querySelector(".signup-name")
 let signupEmail = document.querySelector(".signup-email")
 let signupPassword = document.querySelector(".signup-password")
 let signupmsg = document.querySelector(".signup-msg")
+let loginmsg = document.querySelector(".login-msg")
 
 let loginBtn = document.querySelector(".login-btn")
 let loginEmail = document.querySelector(".login-email")
@@ -30,7 +31,7 @@ loginBtn.addEventListener('click', (event) => {
             if(res.data.login) { 
                 window.location = `/colors`;
             } else { 
-                console.log("login failed")
+                loginmsg.textContent = "The username or password is incorrect"
             }
         })
 })

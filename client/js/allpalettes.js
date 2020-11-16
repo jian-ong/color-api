@@ -87,13 +87,13 @@ axios.get(url).then((res) => {
     quinaryColorInput.value = res.data.data[i].quinary_color_hex;
     quinaryColorDiv.appendChild(quinaryColorInput);
 
-    var exportDiv = document.createElement("div");
-    exportDiv.classList.add("pallete-img");
-    mainDiv.appendChild(exportDiv);
-    var exportImg = document.createElement("img");
-    exportImg.src = "./img/export.png";
-    exportImg.classList.add("export-img");
-    exportDiv.appendChild(exportImg);
+    // var exportDiv = document.createElement("div");
+    // exportDiv.classList.add("pallete-img");
+    // mainDiv.appendChild(exportDiv);
+    // var exportImg = document.createElement("img");
+    // exportImg.src = "./img/export.png";
+    // exportImg.classList.add("export-img");
+    // exportDiv.appendChild(exportImg);
 
     var exportContainer = document.createElement("div");
     exportContainer.classList.add("export-container");
