@@ -14,10 +14,10 @@
 }
 
 .palettes-body .allpalettes-body {
-  font-family: 'Raleway', sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
-/* padding: 0;
-margin: 0; */
 
 /* Layout */
 
@@ -25,36 +25,31 @@ margin: 0; */
 
 .container {
   margin: 50px 25px 0px 25px;
-  /* border-radius: 10px; */
+  border-radius: 10px;
   padding-bottom: 50px;
   /* background-color: var(--primary-color); */
 }
 
 .user-palletes {
-  /* color: rgb(163, 163, 163); */
+  color: var(--quinary-color);
   text-align: center;
-  font-size: 40px;
-  font-family: 'Raleway', sans-serif;
-  padding: 30px;
-  width: 100%;
+  font-size: 72px;
 }
 
 .sub-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  /* width: 100%; */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
   padding-top: 50px;
-  margin: 0 auto;
-  gap: 20px;
 }
 
 .pallete-div {
-  width: 300px;
+  width: 400px;
   height: 700px;
   margin: 0 auto;
-  padding: 0px 0px 0px 0px;
+  padding: 0px 0px 75px 0px;
   margin-bottom: 50px;
-  /* border-radius: 10px; */
+  border-radius: 10px;
   border: 2px solid #cccccc;
   /* background-color: red; */
   border-top-right-radius: 50px;
