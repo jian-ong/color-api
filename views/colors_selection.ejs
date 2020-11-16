@@ -40,7 +40,7 @@
 ​
         <section class="login-container">
             <div class="side-bar">
-                <img class="save-btn" src="https://www.flaticon.com/svg/static/icons/svg/2983/2983818.svg" alt="">
+                <img data-userid=<%= session.user.id%> class="save-btn" src="https://www.flaticon.com/svg/static/icons/svg/2983/2983818.svg" alt="">
                 <!-- <img class="fav-btn" src="https://www.flaticon.com/svg/static/icons/svg/446/446072.svg" alt=""> -->
                 <img class="export-btn" src="https://www.flaticon.com/svg/static/icons/svg/3388/3388674.svg" alt="">
             </div>
@@ -99,10 +99,11 @@ http://color-schemas.herokuapp.com/api/palettes/<%= session.user.api_key%>
         </div>
 ​
     </main> 
-    <div id="colorpalette" data-id=<%= data.id %>  data-col1=<%= data.primary_color_hex %> data-col2=<%= data.secondary_color_hex %> data-col3=<%= data.tertiary_color_hex %> data-col4=<%= data.quaternary_color_hex%>  data-col5=<%= data.quinary_color_hex %>  > bobby</div>
+    <div id="colorpalette" data-id=<%= data.id %>  data-col1=<%= data.primary_color_hex %> data-col2=<%= data.secondary_color_hex %> data-col3=<%= data.tertiary_color_hex %> data-col4=<%= data.quaternary_color_hex%>  data-col5=<%= data.quinary_color_hex %>  > </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
     <script src="/js/login.js"></script>
+    <script src="/js/save.js"></script>
     <script src="/js/export.js"></script>
 </body>
 
