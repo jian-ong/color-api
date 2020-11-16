@@ -1,12 +1,14 @@
 .login-page-grid {
+    font-family: 'Raleway', sans-serif;
     display: grid;
     grid-template-columns: 3fr 1fr;
     margin-top: 4em;
+    margin-left: 10%;
 }
 
 .outer-color-container {
     height: 25em;
-    margin-left: 30px;
+    margin-left: 30%;
     padding-right: 2px;
     box-shadow: 0 10px 15px rgba(20,20,20,0.15);
 }
@@ -19,12 +21,14 @@
 
 .generate-btn {
     position: relative;
-    top: 4em;
-    left: 2em;
-    outline: rgb(122, 131, 150);
+    top: 2em;
+    left: 32em;
+    display: block;
+    margin: 0 auto;
 }
 
-div {
+
+.login-body div {
     display: inline-block;
 }
 
@@ -80,39 +84,84 @@ div {
 /* Login page */
 
 .login-page-title {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 45px;
-    color: #7b756df6;
+    color: #2e2d2bf6;
+    margin: 20px 0 20px;
 }
 
 .login-page-description {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 17px;
-    color: #7b756df6;
+    color: #94928ff6;
 }
 
 .login-page-btn {
     float: left;
-    background:#4bc2c9;
-    color: white;
+    background:white;
+    color: rgb(15, 119, 223);
     padding: 5px 45px;
     margin: 0.5% 0% 0.5% 0.5%;
-    border-radius: 5px;
-    border: none;
-    font-size: 15px;
-    box-shadow: 0 10px 15px rgba(20,20,20,0.15);
+    border: 2px solid rgb(54, 150, 249);
+    border-radius: 20px;
+    font-size: 20px;
+    box-shadow: 3px 5px rgb(54, 150, 249);
+    width: 200px;
 }
 
+.login-page-btn:active {
+    box-shadow: none;
+    transform: translateY(3px);
+}
+
+.login-page-btn:hover {
+    cursor: pointer;
+}
+
+/* login page - sign up button */
 .signup-btn {
     float: left;
-    background: white;
-    color: #4bc2c9;
+    background: rgb(51, 145, 240);
+    color: white;
+    padding: 5px 45px;
+    margin: 5% 0% 0.5% 0.5%;
+    border-radius: 20px;
+    border: 1px solid white;
+    font-size: 20px;
+    box-shadow: 3px 5px rgb(54, 150, 249);
+    width: 200px;
+}
+
+.signup-btn:active {
+    box-shadow: none;
+    transform: translateY(3px);
+}
+
+.signup-btn:hover {
+    cursor: pointer;
+}
+
+/* sign up page - sign up button */
+.signup-page-btn {
+    float: left;
+    background:white;
+    color: rgb(15, 119, 223);
     padding: 5px 45px;
     margin: 0.5% 0% 0.5% 0.5%;
-    border-radius: 5px;
-    border: none;
-    font-size: 15px;
-    box-shadow: 0 10px 15px rgba(20,20,20,0.15);
+    border: 2px solid rgb(54, 150, 249);
+    border-radius: 20px;
+    font-size: 20px;
+    box-shadow: 3px 5px rgb(54, 150, 249);
+    width: 200px;
+}
+
+.signup-page-btn:active {
+    box-shadow: none;
+    transform: translateY(3px);
+}
+
+.signup-page-btn:hover {
+    cursor: pointer;
 }
 
 .login-page-body {
@@ -128,7 +177,7 @@ div {
     height: 50em;
     width: 18em;
     padding: 40px;
-    background: rgb(245, 244, 244);
+    background: rgb(243, 241, 241);
     box-sizing: border-box;
 }
 
@@ -169,3 +218,7 @@ div {
     animation: LabelOnLoad 1s forwards 0s ease;
 }
 
+.box .no-account {
+    color: #94928ff6;
+    margin: 40% 0 0 5% ;
+}

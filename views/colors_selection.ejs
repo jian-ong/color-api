@@ -112,7 +112,7 @@ http://color-schemas.herokuapp.com/api/palettes/<%= session.user.api_key%>
 <% if(session.user){      %>
 <!-- <li class="nav-bar-item"><%= session.user.name%></li> -->
 <%let url = `/colors/${session.user.id}` %>
-<li class="nav-bar-item"><a href=<%= url %>>Saved</a></li>
+<li class="nav-bar-item"><a href="/palettes">Saved</a></li>
 <li class="nav-bar-item"><a href="/logout">Logout</a></li>
 <% }else {  %>
 <li class="nav-bar-item"><a href="/colors/login">Login</a></li>
