@@ -28,98 +28,130 @@ const url = `/api/colors/palettes/favourites/${userid.dataset.userid}`;
 axios.get(url).then((res) => {
   console.log(res.data)
   for (let i = 0; i < res.data.data.length; i++) {
-    var mainDiv = document.createElement("div");
+    let mainDiv = document.createElement("div");
 
+     
     mainDiv.classList.add("pallete-div");
     subContainer.appendChild(mainDiv);
 
-    var primaryColorDiv = document.createElement("div");
+    let primaryColorDiv = document.createElement("div");
     primaryColorDiv.classList.add("primary-color");
     primaryColorDiv.style.backgroundColor = res.data.data[i].primary_color_hex;
     mainDiv.appendChild(primaryColorDiv);
 
-    var primaryColorInput = document.createElement("input");
+    let primaryColorInput = document.createElement("input");
     primaryColorInput.classList.add("primary-input");
     primaryColorInput.value = res.data.data[i].primary_color_hex;
     primaryColorDiv.appendChild(primaryColorInput);
 
-    var secondaryColorDiv = document.createElement("div");
+    let secondaryColorDiv = document.createElement("div");
     secondaryColorDiv.classList.add("secondary-color");
     secondaryColorDiv.style.backgroundColor =
       res.data.data[i].secondary_color_hex;
     mainDiv.appendChild(secondaryColorDiv);
 
-    var secondaryColorInput = document.createElement("input");
+    let secondaryColorInput = document.createElement("input");
     secondaryColorInput.classList.add("secondary-input");
     secondaryColorInput.value = res.data.data[i].secondary_color_hex;
     secondaryColorDiv.appendChild(secondaryColorInput);
 
-    var tertiaryColorDiv = document.createElement("div");
+    let tertiaryColorDiv = document.createElement("div");
     tertiaryColorDiv.classList.add("tertiary-color");
     tertiaryColorDiv.style.backgroundColor =
       res.data.data[i].tertiary_color_hex;
     mainDiv.appendChild(tertiaryColorDiv);
 
-    var tertiaryColorInput = document.createElement("input");
+    let tertiaryColorInput = document.createElement("input");
     tertiaryColorInput.classList.add("tertiary-input");
     tertiaryColorInput.value = res.data.data[i].tertiary_color_hex;
     tertiaryColorDiv.appendChild(tertiaryColorInput);
 
-    var quaternaryColorDiv = document.createElement("div");
+    let quaternaryColorDiv = document.createElement("div");
     quaternaryColorDiv.classList.add("quaternary-color");
     quaternaryColorDiv.style.backgroundColor =
       res.data.data[i].quaternary_color_hex;
     mainDiv.appendChild(quaternaryColorDiv);
 
-    var quaternaryColorInput = document.createElement("input");
+    let quaternaryColorInput = document.createElement("input");
     quaternaryColorInput.classList.add("quaternary-input");
     quaternaryColorInput.value = res.data.data[i].quaternary_color_hex;
     quaternaryColorDiv.appendChild(quaternaryColorInput);
 
-    var quinaryColorDiv = document.createElement("div");
+    let quinaryColorDiv = document.createElement("div");
     quinaryColorDiv.classList.add("quinary-color");
     quinaryColorDiv.style.backgroundColor = res.data.data[i].quinary_color_hex;
     mainDiv.appendChild(quinaryColorDiv);
 
-    var quinaryColorInput = document.createElement("input");
+    let quinaryColorInput = document.createElement("input");
     quinaryColorInput.classList.add("quinary-input");
     quinaryColorInput.value = res.data.data[i].quinary_color_hex;
     quinaryColorDiv.appendChild(quinaryColorInput);
 
-    var exportDiv = document.createElement("div");
+    primaryColorDiv.addEventListener("click", () => {
+      window.location.href = `/colors/${res.data.data[i].palette_id}`
+    })
+    secondaryColorDiv.addEventListener("click", () => {
+      window.location.href = `/colors/${res.data.data[i].palette_id}`
+    })
+    tertiaryColorDiv.addEventListener("click", () => {
+      window.location.href = `/colors/${res.data.data[i].palette_id}`
+    })
+    quaternaryColorDiv.addEventListener("click", () => {
+      window.location.href = `/colors/${res.data.data[i].palette_id}`
+    })
+    quinaryColorDiv.addEventListener("click", () => {
+      window.location.href = `/colors/${res.data.data[i].palette_id}`
+    })
+  
+
+    let exportDiv = document.createElement("div");
     exportDiv.classList.add("pallete-img");
     mainDiv.appendChild(exportDiv);
-    var exportImg = document.createElement("img");
-    exportImg.src = "./img/export.png";
-    exportImg.classList.add("export-img");
-    exportDiv.appendChild(exportImg);
+    let deleteImage = document.createElement("img");
+    deleteImage.src = "/img/delete.png";
+    deleteImage.classList.add("export-img");
+    exportDiv.appendChild(deleteImage);
 
-    var exportContainer = document.createElement("div");
-    exportContainer.classList.add("export-container");
-    exportContainer.classList.add("hidden");
-    mainDiv.appendChild(exportContainer);
+    deleteImage.addEventListener('click', () => {
+      axios.get(`/delete/favourites/${res.data.data[i].id}`).then(
+        window.location.href = `/palettes`
+      )
+    })
 
-    var exportContainerUl = document.createElement("ul");
-    exportContainerUl.classList.add("export-container-ul");
-    exportContainer.appendChild(exportContainerUl);
+    // let exportDiv = document.createElement("div");
+    // exportDiv.classList.add("pallete-img");
+    // mainDiv.appendChild(exportDiv);
+    // let exportImg = document.createElement("img");
+    // exportImg.src = "/img/export.png";
+    // exportImg.classList.add("export-img");
+    // exportDiv.appendChild(exportImg);
 
-    var exportContainerLi1 = document.createElement("li");
-    exportContainerUl.appendChild(exportContainerLi1);
-    var exportContainerA1 = document.createElement("a");
-    exportContainerA1.textContent = "Save";
-    exportContainerLi1.appendChild(exportContainerA1);
+    // let exportContainer = document.createElement("div");
+    // exportContainer.classList.add("export-container");
+    // exportContainer.classList.add("hidden");
+    // mainDiv.appendChild(exportContainer);
 
-    var exportContainerLi2 = document.createElement("li");
-    exportContainerUl.appendChild(exportContainerLi2);
-    var exportContainerA2 = document.createElement("a");
-    exportContainerA2.textContent = "Favorite";
-    exportContainerLi2.appendChild(exportContainerA2);
+    // let exportContainerUl = document.createElement("ul");
+    // exportContainerUl.classList.add("export-container-ul");
+    // exportContainer.appendChild(exportContainerUl);
 
-    var exportContainerLi3 = document.createElement("li");
-    exportContainerUl.appendChild(exportContainerLi3);
-    var exportContainerA3 = document.createElement("a");
-    exportContainerA3.textContent = "Export";
-    exportContainerLi3.appendChild(exportContainerA3);
+    // let exportContainerLi1 = document.createElement("li");
+    // exportContainerUl.appendChild(exportContainerLi1);
+    // let exportContainerA1 = document.createElement("a");
+    // exportContainerA1.textContent = "Save";
+    // exportContainerLi1.appendChild(exportContainerA1);
+
+    // let exportContainerLi2 = document.createElement("li");
+    // exportContainerUl.appendChild(exportContainerLi2);
+    // let exportContainerA2 = document.createElement("a");
+    // exportContainerA2.textContent = "Favorite";
+    // exportContainerLi2.appendChild(exportContainerA2);
+
+    // let exportContainerLi3 = document.createElement("li");
+    // exportContainerUl.appendChild(exportContainerLi3);
+    // let exportContainerA3 = document.createElement("a");
+    // exportContainerA3.textContent = "Export";
+    // exportContainerLi3.appendChild(exportContainerA3);
     // primaryColor.style.backgroundColor = res.data.data[i].primary_color_hex;
     // primaryInput.value = res.data.data[i].primary_color_hex;
     // secondaryColor.style.backgroundColor = res.data.data[i].secondary_color_hex;

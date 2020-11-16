@@ -71,7 +71,13 @@
                 <p>CSS</p>
                 <hr>
                 <textarea class="css-textarea" readonly>
-<!-- *CSS TEXT HERE* -->
+:root {
+    --col1: #acef66;
+    --col2: #66acef;
+    --col3: #6acef6;
+    --col4: #acf66a;
+    --col5: #f66ef6;
+}
                 </textarea>
                 <hr>
                 <div class="css-copy-btn"><p>Copy</p></div>
@@ -85,7 +91,7 @@
                 <p>API</p>
                 <hr>
                 <textarea class="api-textarea">
-<!-- *API text here* -->
+http://color-schemas.herokuapp.com/api/palettes/<%= session.user.api_key%>
                 </textarea>
                 <hr>
                 <div class="api-copy-btn"><p>Copy</p></div>
@@ -93,7 +99,8 @@
         </div>
 ​
     </main> 
-​
+    <div id="colorpalette" data-id=<%= data.id %>  data-col1=<%= data.primary_color_hex %> data-col2=<%= data.secondary_color_hex %> data-col3=<%= data.tertiary_color_hex %> data-col4=<%= data.quaternary_color_hex%>  data-col5=<%= data.quinary_color_hex %>  > bobby</div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
     <script src="/js/login.js"></script>
     <script src="/js/export.js"></script>

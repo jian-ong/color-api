@@ -9,6 +9,17 @@ const tertiaryHex = document.querySelector('.tertiary-hex')
 const quaternaryHex = document.querySelector('.quaternary-hex')
 const quinaryHex = document.querySelector('.quinary-hex')
 const generateBtn = document.querySelector('.generate-btn')
+const sentPaletteColors = document.querySelector('#colorpalette')
+
+function setPalletColorsOnInit () {
+    if(sentPaletteColors.dataset.id === "none"){
+        console.log("randomiser")
+        randomColorGenerator()
+    } else {
+        console.log("sent colors")
+        SelectedColorsApply()
+    }
+}
 
 const randomColorGenerator = () => {
     
@@ -169,6 +180,8 @@ const quinaryColPickr = Pickr.create({
     }
 });
 
+
+
 const handleColorUpdate = (colorPicker) => {
     let userColorSelection = colorPicker.getColor().toHEXA().join("")
     let selectedClass = colorPicker._root.root.parentElement.parentElement.classList[0]
@@ -180,7 +193,7 @@ const handleColorUpdate = (colorPicker) => {
 const colorPickerInitialise = (colorPicker) => {
     colorPicker.on('init', instance => {
         handleColorUpdate(colorPicker)
-        randomColorGenerator()
+        setPalletColorsOnInit()
     }).on('save', (color, instance) => {
         handleColorUpdate(colorPicker)
     }).on('change', (color, instance) => {
@@ -194,3 +207,25 @@ colorPickerInitialise(tertiaryColPickr)
 colorPickerInitialise(quaternaryColPickr)
 colorPickerInitialise(quinaryColPickr)
 generateBtn.addEventListener('click', randomColorGenerator)
+
+
+
+function SelectedColorsApply() {
+    primaryColor = sentPaletteColors.dataset.col1;
+    secondaryColor = sentPaletteColors.dataset.col2;
+    tertiaryColor = sentPaletteColors.dataset.col3;
+    quaternaryColor = sentPaletteColors.dataset.col4;
+    quinaryColor = sentPaletteColors.dataset.col5;
+   
+    primaryContainer.style.background = primaryColor;
+    secondaryContainer.style.background = secondaryColor;
+    tertiaryContainer.style.background = tertiaryColor;
+    quaternaryContainer.style.background = quaternaryColor;
+    quinaryContainer.style.background = quinaryColor;
+
+    primaryHex.innerText = primaryColor;
+    secondaryHex.innerText = secondaryColor;
+    tertiaryHex.innerText = tertiaryColor;
+    quaternaryHex.innerText = quaternaryColor;
+    quinaryHex.innerText = quinaryColor;
+}

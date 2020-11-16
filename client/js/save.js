@@ -13,7 +13,8 @@ saveBtn.addEventListener('click', function() {
     axios.post(`/api/palettes`, pallete)
         .then((res) => {
             //Can add something here that lets you know a palette has been saved
-            saveBtn.style.background = "yellow"
+            saveBtn.style.background = "#bfb3b3"
+            saveBtn.style.borderRadius = "8px"
            console.log(res)
         })
 })
