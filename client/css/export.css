@@ -54,15 +54,18 @@ div {
     animation: 1s forwards 0s ease;
 }
 .color-picker-background {
-    background: rgb(0 4 6 / 25%) !important;
+    /* background: rgb(0 4 6 / 25%) !important; */
     height: 2.5em;
     width: 10em;
 }
 .color-picker-hex {
     margin-left: 5em;
     position: relative;
-    top: -1.3em;
-    left: -2em;
+    top: -0.9em;
+    left: -3.6em;
+    mix-blend-mode: difference;
+    color: #ffffff;
+    font-size: 39px;
 }
 
 
