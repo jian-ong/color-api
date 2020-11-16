@@ -24,7 +24,7 @@ margin: 0; */
 /* Palletes */
 
 .container {
-  margin: 50px 25px 0px 25px;
+  margin: 0 150px;
   /* border-radius: 10px; */
   padding-bottom: 50px;
   /* background-color: var(--primary-color); */
@@ -49,9 +49,9 @@ margin: 0; */
 }
 
 .pallete-div {
-  width: 300px;
-  height: 700px;
-  margin: 0 auto;
+  width: 200px;
+  height: 300px;
+  /* margin: 0 auto; */
   padding: 0px 0px 0px 0px;
   margin-bottom: 50px;
   /* border-radius: 10px; */
@@ -74,12 +74,13 @@ margin: 0; */
 .pallete-div input {
   color: #ffffff;
   mix-blend-mode: difference;
-  text-align: right;
-  margin-top: 105px;
-  margin-left: 125px;
-  font-size: 26px;
+  text-align: center;
+  /* margin-top: 105px; */
+  /* margin-left: 125px; */
+  font-size: 20px;
   background: none;
   border: none;
+  padding-top: 20px;
 }
 
 .pallete-div input:focus {
@@ -91,26 +92,31 @@ margin: 0; */
   border-top-right-radius: 50px;
   border-top-left-radius: 50px;
   height: 20%;
+  width: 200px;
 }
 
 .pallete-div .secondary-color {
   background-color: var(--secondary-color);
   height: 20%;
+  width: 200px;
 }
 
 .pallete-div .tertiary-color {
   background-color: var(--tertiary-color);
   height: 20%;
+  width: 200px;
 }
 
 .pallete-div .quaternary-color {
   background-color: var(--quaternary-color);
   height: 20%;
+  width: 200px;
 }
 
 .pallete-div .quinary-color {
   background-color: var(--quinary-color);
   height: 20%;
+  width: 200px;
 }
 
 .pallete-img {
