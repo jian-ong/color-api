@@ -2,10 +2,9 @@
     <div>
         <button class="login-page-btn generate-btn">Generate</button>
     </div>
-
     
     <main class="login-page-grid">
-
+        
         <section class="outer-color-container">
             <section class="primary-color-container colors">
                 <div class="color-picker-background">
@@ -41,8 +40,8 @@
 ​
         <section class="login-container">
             <div class="side-bar">
-                <img data-userid=<%= session.user.id%> class="save-btn" src="https://www.flaticon.com/svg/static/icons/svg/2983/2983818.svg" alt="">
-                <img class="fav-btn" src="https://www.flaticon.com/svg/static/icons/svg/446/446072.svg" alt="">
+                <img class="save-btn" src="https://www.flaticon.com/svg/static/icons/svg/2983/2983818.svg" alt="">
+                <!-- <img class="fav-btn" src="https://www.flaticon.com/svg/static/icons/svg/446/446072.svg" alt=""> -->
                 <img class="export-btn" src="https://www.flaticon.com/svg/static/icons/svg/3388/3388674.svg" alt="">
             </div>
         </section>  
@@ -94,19 +93,24 @@
         </div>
 ​
     </main> 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+​
     <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
     <script src="/js/login.js"></script>
-    <script src="/js/save.js"></script>
     <script src="/js/export.js"></script>
 </body>
 
 
 <%- contentFor('navbarLogin') %>
 <% if(session.user){      %>
-<li class=""><%= session.user.name%></li>
-<li class="nav-bar-item"><a href="/palettes">Saved</a></li>
+<!-- <li class="nav-bar-item"><%= session.user.name%></li> -->
+<%let url = `/colors/${session.user.id}` %>
+<li class="nav-bar-item"><a href=<%= url %>>Saved</a></li>
 <li class="nav-bar-item"><a href="/logout">Logout</a></li>
 <% }else {  %>
-<li class="nav-bar-item"><a href="/colors">Login</a></li>
+<li class="nav-bar-item"><a href="/colors/login">Login</a></li>
 <% }   %>
+
+<%- contentFor('userNameDisplay') %>
+<% if(session.user) { %>
+    <p style="text-align: right; margin-right: 5%;">Welcome, <%= session.user.name%></p>
+<% } %>

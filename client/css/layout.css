@@ -47,6 +47,14 @@
   justify-content: space-between;
 }
 
+/* Username display */
+
+.username-display {
+  text-align: right;
+  font-family: Arial, Helvetica, sans-serif;
+  color: grey;
+}
+
 /* Footer */
 .footer-layout {
   width: 35%;
