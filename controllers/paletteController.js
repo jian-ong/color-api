@@ -1,12 +1,12 @@
 // const { Pool } = require('pg')
 // const pool = new Pool(process.env.DATABASE_URL || { database: 'colors_api', password: 'password' })
 
-let connString = process.env.DATABASE_URL 
+let connString = process.env.DATABASE_URL
 const { Pool } = require('pg')
-let pool 
+let pool
 
 if (process.env.DATABASE_URL) {
-    pool = new Pool({ connectionString : connString })
+    pool = new Pool({ connectionString: connString })
 } else {
     pool = new Pool({ database: 'colors_api', password: 'password' })
 }
@@ -71,9 +71,29 @@ module.exports = {
         })
     },
     usersFavouritePalettes: (req, res) => {
-        let sql = 'SELECT favourites.palette_id, palettes.primary_color_hex, palettes.secondary_color_hex, palettes.tertiary_color_hex , palettes.quaternary_color_hex , palettes.quinary_color_hex  FROM favourites INNER JOIN palettes ON favourites.palette_id=palettes.id WHERE favourites.user_id=$1;'
+        let sql = 'SELECT favourites.id, favourites.palette_id, palettes.primary_color_hex, palettes.secondary_color_hex, palettes.tertiary_color_hex , palettes.quaternary_color_hex , palettes.quinary_color_hex  FROM favourites INNER JOIN palettes ON favourites.palette_id=palettes.id WHERE favourites.user_id=$1;'
         pool.query(sql, [req.params.user_id], (err, db) => {
             res.json({ message: "ok", data: db.rows })
         })
     },
+    usersFavouritePalettesbyAPI: (req, res) => {
+        pool.query('SELECT * FROM users WHERE api_key = $1;', [req.params.apikey], (err, db) => {
+            if (err) {
+                return res.json({ message: "error", err })
+            } else if (db.rowCount === 0) {
+                return res.json({ message: "No such api key exists, sorry", login: false })
+            } else {
+                let sql = 'SELECT favourites.palette_id, palettes.primary_color_hex, palettes.secondary_color_hex, palettes.tertiary_color_hex , palettes.quaternary_color_hex , palettes.quinary_color_hex  FROM favourites INNER JOIN palettes ON favourites.palette_id=palettes.id WHERE favourites.user_id=$1;'
+                pool.query(sql, [db.rows[0].id], (err, db2) => {
+                    res.json({ message: "ok", data: db2.rows })
+                })
+            }
+        })
+    },
+    removeFavourite: (req, res) => {
+        let sql = 'DELETE FROM favourites WHERE id = $1;'
+        pool.query(sql, [req.params.favourite_id], (err, db) => {
+            res.json({ message: "ok", data: db.rows })
+        })
+    }
 }
