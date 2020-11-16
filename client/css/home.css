@@ -47,7 +47,7 @@
     width: 500px;
 }
 
-.start-btn:focus {
+.start-btn:active {
     box-shadow: none;
     transform: translateY(3px);
 }
